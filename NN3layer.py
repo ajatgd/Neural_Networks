@@ -19,9 +19,9 @@ for iter in xrange(60000):
     l2=sigmoidfn(np.dot(l1,weight2))
     l2_error=y-l2
     if (iter% 10000) == 0:
-        print "Error:" + str(np.mean(np.abs(l2_error)))
+        print "Error:" + str(np.mean(np.abs(l2_error))) #getting error report after every 10000 iteration
     l2_delta=l2_error*sigmoidfn(l2,True)
-    l1_error=l2_delta.dot(weight2.T)
+    l1_error=l2_delta.dot(weight2.T) #backpropagating step, here error in l1 is calculated using error in l2
     l1_delta=l1_error*sigmoidfn(l1,True)
     weight2 += l1.T.dot(l2_delta)
     weight1 += l0.T.dot(l1_delta)
