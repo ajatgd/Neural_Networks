@@ -63,7 +63,7 @@ def calculate_loss(model, X, y):
 #visualizing the decision boundary for same
 def visualize(X, y, model):
     plot_decision_boundary(lambda x:predict(model,x), X, y)
-    plt.title("Logistic Regression")
+    plt.title("NN")
 
 
 def plot_decision_boundary(pred_func, X, y):
